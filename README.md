@@ -1,1 +1,1 @@
-# Opera-n-syst-my
+# Operačné systémy
