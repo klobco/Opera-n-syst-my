@@ -1,0 +1,341 @@
+#!/bin/sh
+
+#AUTHOR : Martin Klobušický
+#DATE : 29.3.2018
+#FILE : wedi
+
+edit=$EDITOR
+
+#nadstavenie editovacieho nastroja
+if [ -z "$EDITOR" ]; then
+	if [ -z "$VISUAL" ]; then
+		edit=vim
+	elif [ -n "$VISUAL" ]; then
+		edit=$VISUAL
+	fi
+fi
+if [ -z "$WEDI_RC" ]; then
+	>&2 echo 'WEDI_RC is not set'
+	exit 10
+fi
+if [ ! -w "$WEDI_RC" ]; then
+	touch "$WEDI_RC" &>/dev/null
+	if [ "$?" != "0" ]; then
+		mkdir -p $(dirname $WEDI_RC)
+	fi
+	touch "$WEDI_RC"
+fi
+
+#kontrolujem ci su vsetky subory stale aktualne a vymazem zapisy zmazanych suborov
+if [ -f "$WEDI_RC" ]; then
+	while read line
+	do
+	cesta=$(echo $line | awk '{ print $10 }')
+	ria=$(echo $line)
+	if [ ! -f "$cesta" ]; then
+		sed -i -e "\#$ria#d" $WEDI_RC
+	fi
+	done < $WEDI_RC
+fi
+echo realpath . &>/dev/null
+if [ ! "$?" -eq "0" ]; then
+	>&2 echo 'realpath neexistuje!'
+	exit 21	
+fi
+#osetrenie ak nebol zadany ziadny argument
+if [ "$#" -eq "0" ]; then
+	cesta=$( realpath .)
+	#grep -x .*$cesta/[^\/]* $WEDI_RC
+	if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+                dir=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $10 }')
+                file=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $1 }')
+                file=$(echo "$file" | tr -d '"')
+		ria=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1)
+                #echo $dir
+                prem=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $8 }')
+                prem=$((prem+1))	
+  		sed -i -e "\#$ria#d" $WEDI_RC
+		datet=$(date +%s &>/dev/null)
+		if [ ! "$?" -eq "0" ]; then
+                	datet=$(gdate +%s &>/dev/null)
+                	if [ ! "$?" -eq "0" ]; then
+                        	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                        	exit 17
+                	fi
+        	fi
+                printf "$file | `date '+%d/%m/%Y %H:%M:%S'` | $datet | $prem | $dir\n">>$WEDI_RC
+                $edit $dir
+		if [ ! "$?" -eq "0" ]; then
+			>&2 echo 'chyba otvorenia suboru!'
+			exit $?
+		fi
+	else
+                >&2 echo 'V zadanom adresari nebol editovany ziadny subor'
+                exit 12
+                fi
+fi
+
+if [ "$#" -eq "1" ] && [ -f "$1" ]; then
+	cesta=$( realpath $1 )
+	#cat $HOME/.config/wedirc | awk '{ print $6 }'
+	#grep -x .*$cesta[^\/]* $WEDI_RC
+	datet=$(date +%s)
+	if [ ! "$?" -eq "0" ]; then
+                datet=$(gdate +%s)
+                if [ ! "$?" -eq "0" ]; then
+                        >&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                        exit 17
+                fi
+        fi
+	if grep -x .*$cesta[^\/]* $WEDI_RC &>/dev/null; then
+		prem=$(grep -x .*$cesta[^\/]* $WEDI_RC | awk '{ print $8 }')
+		prem=$((prem+1))
+		riad=$(grep -x .*$cesta[^\/]* $WEDI_RC)
+		#echo $riad
+		sed -i -e "\#$riad#d" $WEDI_RC
+		printf "$1 | `date '+%d/%m/%Y %H:%M:%S'` | $datet | $prem | $cesta\n">>$WEDI_RC
+	else
+		printf "$1 | `date '+%d/%m/%Y %H:%M:%S'` | $datet | 1 | $cesta\n">>$WEDI_RC
+	fi
+	$edit $cesta
+	if [ ! "$?" -eq "0" ]; then
+        	>&2 echo 'chyba otvorenia suboru!'
+                exit $?
+        fi
+fi
+
+if [ "$#" -eq "1" ] && [ -d "$1" ]; then
+	cesta=$( realpath $1 )
+	if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+		dir=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $10 }')
+		sed -i 's/$/\//g'
+		file=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $1 }')
+		file=$(echo "$file" | tr -d '"')
+		#echo $dir
+		prem=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 | awk '{ print $8 }')
+		prem=$((prem+1))
+		ria=$(grep -x .*$cesta/[^\/]* $WEDI_RC | tail -n 1 )
+		#echo $ria
+		sed -i -e "\#$ria#d" $WEDI_RC
+		datet=$(date +%s)
+		if [ ! "$?" -eq "0" ]; then
+                	datet=$(gdate +%s)
+                	if [ ! "$?" -eq "0" ]; then
+                        	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                        	exit 17
+                	fi
+        	fi
+		printf "$file | `date '+%d/%m/%Y %H:%M:%S'` | $datet | $prem | $dir\n">>$WEDI_RC
+		$edit $dir
+                if [ ! "$?" -eq "0" ]; then
+                        >&2 echo 'chyba otvorenia suboru!'
+                        exit $?
+                fi
+	else
+		>&2 echo 'V zadanom adresari nebol editovany ziadny subor'
+		exit 12
+	fi
+fi
+
+if [ "$#" -eq "2" ] && [ -d "$2" ] && [ "-m" = "$1" ]; then
+	cesta=$( realpath $2 )
+	if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+		ria=$(grep -x .*$cesta/[^\/]* $WEDI_RC | sort -rk8 | head -n 1)
+		#grep -x .*$cesta/[^\/]* $WEDI_RC
+		#echo som tu
+		file=$(grep -x .*$cesta/[^\/]* $WEDI_RC | sort -rk8 | head -n 1 | awk '{ print $10 }')
+		#echo $file
+                naz=$(echo "$ria" | awk '{ print $1 }'| tr -d '"')
+		#echo $naz
+		prem=$(echo "$ria" | awk '{ print $8 }')
+		prem=$((prem+1))
+		#echo $prem
+		datet=$(date +%s)
+		if [ ! "$?" -eq "0" ]; then
+                	datet=$(gdate +%s)
+                	if [ ! "$?" -eq "0" ]; then
+                        	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                        	exit 17
+                	fi
+        	fi
+		sed -i -e "\#$ria#d" $WEDI_RC
+		printf "$naz | `date '+%d/%m/%Y %H:%M:%S'` | $datet | $prem | $file\n">>$WEDI_RC
+		$edit $file
+                if [ ! "$?" -eq "0" ]; then
+                        >&2 echo 'chyba otvorenia suboru!'
+                        exit $?
+                fi
+	else
+		>&2 echo 'V zadanom adresari nebol editovany ziadny subor'
+		exit 13
+	fi
+fi
+
+if [ "$#" -eq "2" ] && [ -d "$2" ] && [ "-l" = "$1" ]; then
+	cesta=$( realpath $2 )
+	if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+		grep -x .*$cesta/[^\/]* $WEDI_RC | awk '{ print $1}'
+	else
+	>&2 echo 'V zadanom adresari niesu ziadne subory editovane pomocou wedi'
+	exit 14
+	fi
+fi
+
+if [ "$#" -eq "3" ] && [ -d "$3" ] && [ "-b" = "$1" ]; then
+	cesta=$( realpath $3 ) 
+	#echo $cesta
+        nalez=$(grep -x .*$cesta/[^\/]* $WEDI_RC)
+        time=$(date -d $2 +"%s")
+        if [ ! "$?" -eq "0" ]; then
+	        time=$(gdate -d $2 +"%s")
+                if [ ! "$?" -eq "0" ]; then
+                	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                	exit 17
+		fi
+        fi
+        if [ ! -z "$nalez" ]; then
+                #echo $time
+                nalez=$(echo "$nalez"| awk -F  "|" -v time="$time" '{if ($3<time) print $1}')
+                if [ -z "$nalez" ]; then
+                        >&2 echo 'Pred zadanym datom neboli editovane ziadne subory!'
+                        exit 17
+                else
+                        echo $nalez | tr " " "\n"
+                fi
+	else
+		>&2 echo 'Pred zadanym datom neboli editovane ziadne subory!'
+                exit 17
+        fi
+
+fi
+
+if [ "$#" -eq "3" ] && [ -d "$3" ] && [ "-a" = "$1" ]; then
+        cesta=$( realpath $3 )
+	#echo $cesta
+        nalez=$(grep -x .*$cesta/[^\/]* $WEDI_RC)
+        time=$(date -d $2 +"%s")
+        if [ ! "$?" -eq "0" ]; then
+		time=$(gdate -d $2 +"%s")
+                if [ ! "$?" -eq "0" ]; then
+                	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                	exit 17
+		fi
+        fi
+        if [ ! -z "$nalez" ]; then
+                #echo $time
+                nalez=$(echo "$nalez"| awk -F  "|" -v time="$time" '{if ($3>time) print $1}')
+                if [ -z "$nalez" ]; then
+                        >&2 echo 'Po zadanom date neboli editovane ziadne subory!'
+                        exit 17
+                else
+                        echo $nalez | tr " " "\n"
+                fi
+	else
+		>&2 echo 'Po zadanom date neboli editovane ziadne subory!'
+        	exit 20
+        fi
+
+fi
+
+if [ "$#" -eq "1" ] && [ "-m" = "$1" ]; then
+        cesta=$(realpath .)
+        if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+                ria=$(grep -x .*$cesta/[^\/]* $WEDI_RC | sort -rk8 | head -n 1)
+                #grep -x .*$cesta/[^\/]* $WEDI_RC
+                #echo som tu
+                file=$(grep -x .*$cesta/[^\/]* $WEDI_RC | sort -rk8 | head -n 1 | awk '{ print $10 }')
+                #echo $file
+                naz=$(echo "$ria" | awk '{ print $1 }'| tr -d '"')
+                #echo $naz
+                prem=$(echo "$ria" | awk '{ print $8 }')
+                prem=$((prem+1))
+                #echo $prem
+                datet=$(date +%s &>/dev/null)
+		if [ ! "$?" -eq "0" ]; then
+                	datet=$(gdate +%s)
+                	if [ ! "$?" -eq "0" ]; then
+                        	>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                        	exit 17
+                	fi
+        	fi
+                sed -i -e "\#$ria#d" $WEDI_RC
+                printf "$naz | `date '+%d/%m/%Y %H:%M:%S'` | $datet | $prem | $file\n">>$WEDI_RC
+                $edit $file
+                if [ ! "$?" -eq "0" ]; then
+                        >&2 echo 'chyba otvorenia suboru!'
+                        exit $?
+                fi
+        else
+                >&2 echo 'V zadanom adresari nebol editovany ziadny subor'
+                exit 15
+        fi
+
+fi
+
+if [ "$#" -eq "1" ] && [ "-l" = "$1" ]; then
+        cesta=$(realpath .)
+        if grep -x .*$cesta/[^\/]* $WEDI_RC &>/dev/null; then
+                grep -x .*$cesta/[^\/]* $WEDI_RC | awk '{ print $1}'
+        else
+        >&2 echo 'V zadanom adresari niesu ziadne subory editovane pomocou wedi'
+        exit 16
+        fi
+fi
+
+if [ "$#" -eq "2" ] && [ "-b" = "$1" ]; then
+        cesta=$( realpath . )
+	#echo $cesta
+	nalez=$(grep -x .*$cesta/[^\/]* $WEDI_RC)
+	#echo $nalez
+        time=$(date -d $2 +"%s")
+	if [ ! "$?" -eq "0" ]; then
+		time=$(gdate -d $2 +"%s")
+                if [ ! "$?" -eq "0" ]; then
+			>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+			exit 17	
+		fi
+	fi
+        if [ ! -z "$nalez" ]; then
+		#echo $time
+		nalez=$(echo "$nalez"| awk -F  "|" -v time="$time" '{if ($3<time) print $1}')
+		if [ -z "$nalez" ]; then
+			>&2 echo 'Pred zadanym datom neboli editovane ziadne subory!'
+                	exit 17
+		else
+			echo $nalez | tr " " "\n"
+		fi
+	else
+		>&2 echo 'Pred zadanym datom neboli editovane ziadne subory!'
+                exit 17
+        fi
+fi
+
+
+if [ "$#" -eq "2" ] && [ "-a" = "$1" ]; then
+        cesta=$( realpath .)
+        #echo $cesta
+        nalez=$(grep -x .*$cesta/[^\/]* $WEDI_RC)
+	#echo $nalez
+        time=$(date -d $2 +"%s")
+        if [ ! "$?" -eq "0" ]; then
+		time=$(gdate -d $2 +"%s")
+		if [ ! "$?" -eq "0" ]; then
+			>&2 echo 'Zadany argument 2 musi byt vo formate YYYY-MM-DD!'
+                	exit 17
+		fi
+        fi
+        if [ ! -z "$nalez" ]; then
+                #echo $time
+                nalez=$(echo "$nalez"| awk -F  "|" -v time="$time" '{if ($3>time) print $1}')
+                if [ -z "$nalez" ]; then
+                        >&2 echo 'Po zadanom date neboli editovane ziadne subory!'
+                        exit 17
+                else
+                        echo $nalez | tr " " "\n"
+                fi
+	else
+		>&2 echo 'Po zadanom date neboli editovane ziadne subory!'
+                exit 17
+        fi
+fi
+
