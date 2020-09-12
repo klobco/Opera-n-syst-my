@@ -1,1 +1,1 @@
-# Operačné systémy
+# Školeské projekty
