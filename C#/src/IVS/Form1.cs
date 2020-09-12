@@ -1,4 +1,4 @@
-#Author: Martin Klobušický
+//Author: Martin Klobušický
 
 using System;
 using System.Collections.Generic;
