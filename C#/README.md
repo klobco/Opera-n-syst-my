@@ -12,10 +12,8 @@ Windows 64bit
 Autori
 ------
 
-Pray4Kebab
-- xhorky28 Jakub Horký
-- xkrehl04 Petr Křehlík 
-- xklobu03 Martin Klobušický 
+- Petr Křehlík 
+- Martin Klobušický
 
 Licence
 -------
