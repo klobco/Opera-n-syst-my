@@ -1,0 +1,252 @@
+\hypertarget{class_math_library_1_1math}{}\section{Math\+Library.\+math Class Reference}
+\label{class_math_library_1_1math}\index{Math\+Library.\+math@{Math\+Library.\+math}}
+
+
+Trida math provadejici zakladni a porkocile mat operace. Umi i zpracovat vyraz bez zavorek.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_ad33392c83756895b4a5af417ed69270d}{Soucet}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em Soucet dvou cisel na vstupu \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a888226aaba3ab5f4ef310bbcfb0f9cd7}{Rozdil}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em Rozdil dvou cisel na vstupu \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a39f0ce528d77e03cf63a00333f5973e6}{Nasob}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em Nasobeni dvou cisel na vstupu \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a4cd9b49df0b6f0073c95c95b3f0e6e2f}{Podil}} (double a, double b)
+\begin{DoxyCompactList}\small\item\em Deleni dvou cisel na vstupu \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_math_library_1_1math_af838c111bbe0f378bb2ccfb3591cce3a}{Faktorial}} (double a)
+\begin{DoxyCompactList}\small\item\em Vypocita faktorial ze zadaneho cisla \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a4e4be4de44305ffd1bd15db33fb26e3a}{Umocnit}} (double x, double n)
+\begin{DoxyCompactList}\small\item\em Vypocita mocninu vstupniho cisla x umocneneho prirozenym cislem n \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_aa28f90e3e657831aa9d634f1d0410413}{Odmocnina}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em Pocita N-\/tou odmocninu pomoci kraceni mezi, presnost je 500 iteraci \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a389c42a9997236b24c2b0af1c43c625d}{Tangens}} (double x)
+\begin{DoxyCompactList}\small\item\em Vypocita Tangens pomoci metody zretezeneho zlomku, funguje presne jen v intervalu (-\/50,40) \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_math_library_1_1math_a4f3512b2dcb484d8b579274c5813f706}{Zpracovat\+\_\+\+Vyraz}} (string vyraz)
+\begin{DoxyCompactList}\small\item\em Jednoduchy \char`\"{}wolfram\char`\"{}, ktery zpracovava vyraz (+,-\/,$\ast$,/,$^\wedge$,√,!) podle priorit od nejvyssi (!,√,$^\wedge$,$\ast$,/,+,-\/), nepredpoklada nic jineho nez cisla a operatory ve spravnem formatu! \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_math_library_1_1math_a95a9b98b570e2f0ba44042550d9480c1}{odchylka\+\_\+s}} (int N, List$<$ double $>$ pole)
+\begin{DoxyCompactList}\small\item\em Pocita vyberovou smerodatnou odchylku \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Trida math provadejici zakladni a porkocile mat operace. Umi i zpracovat vyraz bez zavorek. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_math_library_1_1math_af838c111bbe0f378bb2ccfb3591cce3a}\label{class_math_library_1_1math_af838c111bbe0f378bb2ccfb3591cce3a}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Faktorial@{Faktorial}}
+\index{Faktorial@{Faktorial}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Faktorial()}{Faktorial()}}
+{\footnotesize\ttfamily static int Math\+Library.\+math.\+Faktorial (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vypocita faktorial ze zadaneho cisla 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & Pokud vstup neni prirozene cislo\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Faktorial vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a39f0ce528d77e03cf63a00333f5973e6}\label{class_math_library_1_1math_a39f0ce528d77e03cf63a00333f5973e6}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Nasob@{Nasob}}
+\index{Nasob@{Nasob}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Nasob()}{Nasob()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Nasob (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nasobeni dvou cisel na vstupu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nasobeni vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a95a9b98b570e2f0ba44042550d9480c1}\label{class_math_library_1_1math_a95a9b98b570e2f0ba44042550d9480c1}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!odchylka\+\_\+s@{odchylka\+\_\+s}}
+\index{odchylka\+\_\+s@{odchylka\+\_\+s}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{odchylka\+\_\+s()}{odchylka\_s()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+odchylka\+\_\+s (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{List$<$ double $>$}]{pole }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pocita vyberovou smerodatnou odchylku 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Pocet cisel\\
+\hline
+{\em pole} & Vstupni pole cisel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_aa28f90e3e657831aa9d634f1d0410413}\label{class_math_library_1_1math_aa28f90e3e657831aa9d634f1d0410413}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Odmocnina@{Odmocnina}}
+\index{Odmocnina@{Odmocnina}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Odmocnina()}{Odmocnina()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Odmocnina (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pocita N-\/tou odmocninu pomoci kraceni mezi, presnost je 500 iteraci 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Zaklad\\
+\hline
+{\em n} & N-\/ta odmocnina\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vraci odmocninu s presnosti mensi jak 10$^\wedge$-\/10
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a4cd9b49df0b6f0073c95c95b3f0e6e2f}\label{class_math_library_1_1math_a4cd9b49df0b6f0073c95c95b3f0e6e2f}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Podil@{Podil}}
+\index{Podil@{Podil}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Podil()}{Podil()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Podil (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deleni dvou cisel na vstupu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Divide\+By\+Zero\+Exception} & Nastavi pri deleni nulou\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Deleni vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a888226aaba3ab5f4ef310bbcfb0f9cd7}\label{class_math_library_1_1math_a888226aaba3ab5f4ef310bbcfb0f9cd7}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Rozdil@{Rozdil}}
+\index{Rozdil@{Rozdil}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Rozdil()}{Rozdil()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Rozdil (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rozdil dvou cisel na vstupu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rozdil vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_ad33392c83756895b4a5af417ed69270d}\label{class_math_library_1_1math_ad33392c83756895b4a5af417ed69270d}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Soucet@{Soucet}}
+\index{Soucet@{Soucet}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Soucet()}{Soucet()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Soucet (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Soucet dvou cisel na vstupu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Soucet vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a389c42a9997236b24c2b0af1c43c625d}\label{class_math_library_1_1math_a389c42a9997236b24c2b0af1c43c625d}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Tangens@{Tangens}}
+\index{Tangens@{Tangens}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Tangens()}{Tangens()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Tangens (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vypocita Tangens pomoci metody zretezeneho zlomku, funguje presne jen v intervalu (-\/50,40) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Uhel v radianech v rozsahu (-\/50,40)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+´\+Vraci tangens s presnosti mensi jak 10$^\wedge$-\/8
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a4e4be4de44305ffd1bd15db33fb26e3a}\label{class_math_library_1_1math_a4e4be4de44305ffd1bd15db33fb26e3a}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Umocnit@{Umocnit}}
+\index{Umocnit@{Umocnit}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Umocnit()}{Umocnit()}}
+{\footnotesize\ttfamily static double Math\+Library.\+math.\+Umocnit (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Vypocita mocninu vstupniho cisla x umocneneho prirozenym cislem n 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Zaklad\\
+\hline
+{\em n} & Mocnitel\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & N musi byt prirozene cislo\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+Vraci N-\/tou mocninu vstupu
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_math_library_1_1math_a4f3512b2dcb484d8b579274c5813f706}\label{class_math_library_1_1math_a4f3512b2dcb484d8b579274c5813f706}} 
+\index{Math\+Library\+::math@{Math\+Library\+::math}!Zpracovat\+\_\+\+Vyraz@{Zpracovat\+\_\+\+Vyraz}}
+\index{Zpracovat\+\_\+\+Vyraz@{Zpracovat\+\_\+\+Vyraz}!Math\+Library\+::math@{Math\+Library\+::math}}
+\subsubsection{\texorpdfstring{Zpracovat\+\_\+\+Vyraz()}{Zpracovat\_Vyraz()}}
+{\footnotesize\ttfamily static string Math\+Library.\+math.\+Zpracovat\+\_\+\+Vyraz (\begin{DoxyParamCaption}\item[{string}]{vyraz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Jednoduchy \char`\"{}wolfram\char`\"{}, ktery zpracovava vyraz (+,-\/,$\ast$,/,$^\wedge$,√,!) podle priorit od nejvyssi (!,√,$^\wedge$,$\ast$,/,+,-\/), nepredpoklada nic jineho nez cisla a operatory ve spravnem formatu! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vyraz} & vyraz typu string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vraci vysledek jako jedno cislo typu string (pro kompatibilitu s dalsimi funkcemi)
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+I\+V\+S/math.\+cs\end{DoxyCompactItemize}
