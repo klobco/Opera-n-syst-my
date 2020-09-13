@@ -1,0 +1,9 @@
+# Chybná konštrukcia IF-u (výraz + IF + Then)
+
+a=0.5
+b=10
+a < b if then 
+   a =5
+end
+
+#2

@@ -1,0 +1,12 @@
+# Funkce 2, spravne volani
+
+def func(p,k)
+	p
+end
+
+
+a=6
+a = func a,a
+print a
+
+#0

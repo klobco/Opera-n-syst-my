@@ -1,0 +1,23 @@
+# Definice nekolikrat zanorene promenne
+
+if 2>1 then
+	if 5==5 then
+		a=5
+		while a<10 do
+			a=a+1
+			if a==8 then
+				k=9
+
+				if k==9 then
+					nil
+				else
+					var=9
+				end
+			end
+		end
+	end
+end 
+
+print var
+
+#0

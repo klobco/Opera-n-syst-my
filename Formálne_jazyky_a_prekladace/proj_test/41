@@ -1,0 +1,11 @@
+# Print volane funkce
+
+def func()
+	k=1
+end
+
+a=func()
+print (a)
+
+
+#0

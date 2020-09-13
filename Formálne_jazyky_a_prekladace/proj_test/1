@@ -1,0 +1,6 @@
+# Použití nedefinované proměnné ve výrazu
+a=5
+if b > 10 then
+print "chyba"
+end
+#3

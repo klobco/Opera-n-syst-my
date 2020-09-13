@@ -1,0 +1,9 @@
+# Redefinice funkce
+
+
+a=0.5
+def a()
+end
+
+
+#3

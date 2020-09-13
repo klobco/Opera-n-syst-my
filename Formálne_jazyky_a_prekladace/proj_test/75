@@ -1,0 +1,7 @@
+# Nil na samostatnem radku
+
+a=9
+nil
+print 9
+
+#0

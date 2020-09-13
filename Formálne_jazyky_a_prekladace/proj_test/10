@@ -1,0 +1,10 @@
+# IF nemá žiadnu podmienku
+
+a=0.5
+b=10
+if then 
+   print "som tu"
+   a +=0.5
+end
+
+#2

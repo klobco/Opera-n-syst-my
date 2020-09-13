@@ -1,0 +1,13 @@
+# Funkce 2, spatne volani
+
+def func(p,k)
+	p
+end
+
+
+a=6
+b=2
+a = func a,b,
+print a
+
+#2

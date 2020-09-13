@@ -1,0 +1,9 @@
+# IF má vo výraze ">>>" vymyslený znak
+
+a=0.5
+b=10
+if a>>>b then 
+   a=5
+end
+
+#2

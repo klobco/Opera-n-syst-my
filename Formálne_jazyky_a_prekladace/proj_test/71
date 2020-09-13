@@ -1,0 +1,14 @@
+# Kombinovany viceradkovy komentar
+a=5
+if a==5 then
+=begin 
+else
+=end
+a=6
+end
+=begin
+end
+=end
+print a
+
+#0

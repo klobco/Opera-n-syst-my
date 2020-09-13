@@ -1,0 +1,8 @@
+# Zlá konštrukcia If-u -> namiesto "then" použité "the" 
+a=5
+if 1<2 the
+a=6
+else
+a=4
+end
+#2

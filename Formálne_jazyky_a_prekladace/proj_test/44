@@ -1,0 +1,6 @@
+# Print neplatneho vyrazu(neexistujici promenna)
+
+
+print(k+"a")
+
+#3

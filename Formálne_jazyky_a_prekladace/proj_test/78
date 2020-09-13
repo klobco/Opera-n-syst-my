@@ -1,0 +1,9 @@
+# SEM - Volani def funkce
+
+def k()
+	nil
+end
+
+k()
+
+#0

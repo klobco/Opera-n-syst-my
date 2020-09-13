@@ -1,0 +1,11 @@
+# If8 - větvení jednoduché if
+
+
+if 1<2 then
+	if 1==1 then
+	end
+end
+
+
+
+#0

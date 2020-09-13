@@ -1,0 +1,12 @@
+# Spatne volani funkce
+
+def func(p)
+	p
+end
+
+
+a=6
+a = func a,
+print a
+
+#2

@@ -1,0 +1,11 @@
+# While
+
+a=1
+b=1
+
+while a<5 do
+	a=a+1
+	print "A:",a,"\n"
+end
+
+#0

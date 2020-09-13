@@ -1,0 +1,10 @@
+# while nemá žiadnu podmienku
+
+a=0.5
+b=10
+while do 
+   print "som tu"
+   a +=0.5
+end
+
+#2

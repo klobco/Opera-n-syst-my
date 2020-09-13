@@ -1,0 +1,21 @@
+# Volani nedef funkce bez parametru v zanoreni
+
+
+if 2>1 then
+	if 5==5 then
+		b=5
+		while b<10 do
+			if b==8 then
+				k=9
+				if k==9 then
+					nil
+				else
+					a
+				end
+			end
+		end
+	end
+end 
+
+
+#3

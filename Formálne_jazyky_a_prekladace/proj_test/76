@@ -1,0 +1,8 @@
+# Nil ve vyrazu
+
+a=9
+b=nil
+c=a+b
+print c
+
+#0

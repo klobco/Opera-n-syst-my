@@ -1,0 +1,9 @@
+# U while-u chýba end
+
+a=0.5
+b=10
+while a < b  do
+   print "som tu"
+   a +=0.5
+
+#2

@@ -1,0 +1,22 @@
+# 3 vnořené WHILE, chybná syntaxe while
+
+a=1
+b=1
+
+while a<5 do
+	a=a+1
+	b=0
+	while b<2 do
+		b=b+1
+		c=0
+		while c<2 
+		do
+			c=c+1
+			print "C:",c,"\n"
+		end
+		print "B:",b,"\n"
+	end
+	print "A:",a,"\n"
+end
+
+#2

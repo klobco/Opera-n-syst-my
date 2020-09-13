@@ -1,0 +1,10 @@
+# Zadaný zlý počet argumentov vo funkcii
+a=11
+
+def b(number,string)
+10
+end
+
+b(a,)
+
+#5

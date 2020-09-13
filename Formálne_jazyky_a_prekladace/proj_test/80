@@ -1,0 +1,20 @@
+# Chybna definice nekolikrat zanorene promenne
+
+if 2>1 then
+	if 5==5 then
+		a=5
+		while a<10 do
+			if a==8 then
+				k=9
+				if k==9 then
+					nil
+				else
+					var
+				end
+			end
+		end
+	end
+end 
+
+
+#3

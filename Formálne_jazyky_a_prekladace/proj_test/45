@@ -1,0 +1,6 @@
+# Print neplatneho vyrazu (konkatenace string a int)
+
+k=1
+print(k+"a")
+
+#2
