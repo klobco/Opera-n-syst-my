@@ -1,0 +1,26 @@
+str="abcd"
+sub1=substr(str, 0, 4)
+sub2=substr(str, 0, 1)
+sub3=substr(str, 0, 0)
+sub4=substr(str, 2, 0)
+sub5=substr(str, 2, 2)
+sub6=substr(str, 3, 100)
+sub7=substr(str, 4, 100)
+len1=length(sub1)
+len2=length(sub2)
+len3=length(sub3)
+len4=length(sub4)
+len5=length(sub5)
+len6=length(sub6)
+len7=length(sub7)
+
+print("Podretezce a jejich delky:\n")
+print sub1, " ", len1, "\n"
+print sub2, " ", len2, "\n"
+print sub3, " ", len3, "\n"
+print sub4, " ", len4, "\n"
+print sub5, " ", len5, "\n"
+print sub6, " ", len6, "\n"
+print sub7, " ", len7, "\n"
+
+print "Spravny vysledek:\nabcd 4\na 1\n 0\n 0\ncd 2\nd 1\n 0\n"

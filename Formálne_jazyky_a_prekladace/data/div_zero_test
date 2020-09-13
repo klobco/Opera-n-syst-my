@@ -1,0 +1,5 @@
+b=9/1
+print "9/1=", b, "\n"
+print "9/0=(program se ukonci s exit_code = 9)\n"
+b=9/0.0
+print b, "\n"

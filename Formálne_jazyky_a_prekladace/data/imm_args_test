@@ -1,0 +1,16 @@
+def function(a,b)
+	res=a+b
+end
+
+print("Zadej libovolne cele cislo:\n")
+in = inputi()
+
+e=function(in,100)
+print("Vysledek funkce function(input, 100)=", e, "\n")
+
+def next_function(a,b,c,d)
+	res=a+b+c+d
+end
+
+e=next_function(in, 10, 80, 10)
+print("Vysledek funkce next_function(input, 10, 80, 10)=", e, "\n")

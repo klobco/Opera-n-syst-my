@@ -1,0 +1,80 @@
+test_expr () {
+	echo $1 | ../build/expression_main no_print
+	ret=$?
+	if [ $ret -ne 0 ] ; then
+		echo "S navratovym kodem=$ret selhal nasledujici vyraz: $1"
+	fi
+}
+test_expr_ext () {
+	test_expr "$1+$2"
+	test_expr "$1-$2"
+	test_expr "$1*$2"
+	test_expr "$1/$2"
+	test_expr "$2+$1"
+	test_expr "$2-$1"
+	test_expr "$2*$1"
+	test_expr "$2/$1"
+}
+
+neg_test_expr () {
+	echo $1 | ../build/expression_main no_print
+	ret=$?
+	if [ $ret -eq 0 ] ; then
+		echo "S navratovym kodem=$ret neselhal ale selhat mel nasledujici vyraz: $1"
+	fi
+}
+neg_test_expr_ext () {
+	neg_test_expr "$1+$2"
+	neg_test_expr "$1-$2"
+	neg_test_expr "$1*$2"
+	neg_test_expr "$1/$2"
+	neg_test_expr "$2+$1"
+	neg_test_expr "$2-$1"
+	neg_test_expr "$2*$1"
+	neg_test_expr "$2/$1"
+}
+
+# Testy, ktere by projit mely
+test_expr "1"
+test_expr "0-1"
+test_expr "1+2+3+4+5+6"
+test_expr "1*2+3*4+5*6"
+test_expr "(1*2+3)*(4+5*6)"
+test_expr "6/2"
+test_expr "1*2"
+test_expr "((((1*2)+1)+2)*23-23/23)"
+test_expr "1/(2+3*(3+((2))+((1*2)+1)+2)*23-23/23)"
+test_expr "int_var*2"
+test_expr "int_var*int_var"
+test_expr "int_var*float_var"
+test_expr "int_var*((2+3)*float_var)"
+test_expr "string_var+string_var"
+# Dalsi pridane testy
+test_expr_ext "1" "2"
+test_expr_ext "1.4" "2"
+test_expr_ext "1.4" "2.4"
+test_expr_ext float_var int_var
+test_expr_ext float_var float_var
+test_expr_ext int_var int_var
+
+# Testy, ktere by projit nemely
+neg_test_expr "+"
+neg_test_expr "*"
+neg_test_expr "*1"
+neg_test_expr "/1"
+neg_test_expr "1 1"
+neg_test_expr "1//1"
+neg_test_expr "1++"
+neg_test_expr "nedefinovana_promenna"
+neg_test_expr "abc def"
+neg_test_expr "abcdef"
+neg_test_expr "abcdef*2"
+neg_test_expr "2*abcdef*2"
+neg_test_expr "nonextisting_var*((2+3)*int_var)"
+
+# poznámka: pokud budeme dělat statickou kontrolu typů, pak odkomentovat:
+#neg_test_expr "string_var+int_var"
+#neg_test_expr "string_var+float_var"
+#neg_test_expr "string_var+nil_var"
+
+echo "Konec testovani"

@@ -1,0 +1,15 @@
+var1="retezec v promenne"
+
+# poznámka: výpis prázdného řetězce nefunguje - může být chyba ve scanneru?
+print("")
+
+print("vypis printu", "\n")
+print("print se tremi ", "parametry", "\n")
+print(var1, "\n")
+print("nekolik cisel:", 1, " ", 2, " ", 1.23, " ", 2.323, "\n")
+print "nekolik cisel:", 1, " ", 2, " ", 1.23, " ", 2.323, "\n"
+
+# poznámka: když je print volaný bez závorek = print "abcd" na konci souboru, dojde k lexikální chybě
+# - načítá se token i přesto, že poslední token byl EOF - opravit
+# poznámka: není to jediný případ, kdy print bez závorek nefunguje
+print "print volany bez pouziti zavorek", "\n" 

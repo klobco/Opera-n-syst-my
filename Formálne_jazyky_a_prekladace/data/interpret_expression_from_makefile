@@ -1,0 +1,7 @@
+#!/bin/bash
+# Note: this script exists so that interpret's exit code can be checked and printed in makefile
+set -o pipefail
+./interpret/ic18int ./build/output/expression_main.out | tee ./build/interpret_output/expression_main.txt
+echo "Navratovy kod interpretu:$?"
+set +o pipefail
+exit 0

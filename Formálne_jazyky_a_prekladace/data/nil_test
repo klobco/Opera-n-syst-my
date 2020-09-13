@@ -1,0 +1,13 @@
+a=nil
+
+if a then
+	print "nil -> true ... chyba\n"
+else
+	print "nil -> false ... spravne\n"
+end
+
+if nil then
+	print "nil -> true ... chyba\n"
+else
+	print "nil -> false ... spravne\n"
+end
