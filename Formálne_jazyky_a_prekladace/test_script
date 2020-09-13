@@ -1,0 +1,8 @@
+clear
+make clean
+make
+clear
+cp ./build/parser_main ./proj_test/parser_main
+cd ./proj_test/
+./test_script
+cd ..

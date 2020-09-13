@@ -1,0 +1,398 @@
+[3;J[H[2Jrm -r build/
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/dstring.c -o build/obj/src/dstring.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/binary_tree.c -o build/obj/src/binary_tree.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/list.c -o build/obj/src/list.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/parser.c -o build/obj/src/parser.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/code_gen.c -o build/obj/src/code_gen.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/expression.c -o build/obj/src/expression.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/esym_stack.c -o build/obj/src/esym_stack.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/garbage.c -o build/obj/src/garbage.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/symtable.c -o build/obj/src/symtable.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/dstring_stack.c -o build/obj/src/dstring_stack.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c src/scanner.c -o build/obj/src/scanner.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/code_gen_main.c -o build/obj/tests/code_gen_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/code_gen_main.o -o  build/code_gen_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/builtin_code_gen_main.c -o build/obj/tests/builtin_code_gen_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/builtin_code_gen_main.o -o  build/builtin_code_gen_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/symtable_main.c -o build/obj/tests/symtable_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/symtable_main.o -o  build/symtable_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/dstring_stack_main.c -o build/obj/tests/dstring_stack_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/dstring_stack_main.o -o  build/dstring_stack_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/if_while_gen_main.c -o build/obj/tests/if_while_gen_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/if_while_gen_main.o -o  build/if_while_gen_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/expression_main.c -o build/obj/tests/expression_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/expression_main.o -o  build/expression_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/binary_tree_main.c -o build/obj/tests/binary_tree_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/binary_tree_main.o -o  build/binary_tree_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/list_main.c -o build/obj/tests/list_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/list_main.o -o  build/list_main
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/ -c tests/parser_main.c -o build/obj/tests/parser_main.o
+gcc -Wall -Wextra -Werror -g -Itests/ -Isrc/  build/obj/src/dstring.o  build/obj/src/binary_tree.o  build/obj/src/list.o  build/obj/src/parser.o  build/obj/src/code_gen.o  build/obj/src/expression.o  build/obj/src/esym_stack.o  build/obj/src/garbage.o  build/obj/src/symtable.o  build/obj/src/dstring_stack.o  build/obj/src/scanner.o build/obj/tests/parser_main.o -o  build/parser_main
+[3;J[H[2Jsúbor 1: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Použití nedefinované proměnné ve výrazu
+
+súbor 1 prešiel úspešne interpretom
+
+súbor 2: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Zlá konštrukcia If-u -> namiesto "then" použité "the" 
+
+súbor 2 prešiel úspešne interpretom
+
+súbor 3: očakávaný výstu: 1, skutočný výstup: 1 --- Succes
+# Viceradkove komentare
+
+súbor 3 prešiel úspešne interpretom
+
+súbor 4: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Zadaný zlý počet argumentov vo funkcii
+
+súbor 4 prešiel úspešne interpretom
+
+súbor 5: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Viceradkove komentare
+
+súbor 5 prešiel úspešne interpretom
+
+súbor 6: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Viceradkove komentare
+
+súbor 6 prešiel úspešne interpretom
+
+súbor 7: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# U while-u chýba end
+
+súbor 7 prešiel úspešne interpretom
+
+súbor 8: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# while má 2x zasebou keyword "do"
+
+súbor 8 prešiel úspešne interpretom
+
+súbor 9: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# while nemá žiadnu podmienku
+
+súbor 9 prešiel úspešne interpretom
+
+súbor 10: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# IF nemá žiadnu podmienku
+
+súbor 10 prešiel úspešne interpretom
+
+súbor 11: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# IF má vo výraze ">>>" vymyslený znak
+
+súbor 11 prešiel úspešne interpretom
+
+súbor 12: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Chybná konštrukcia IF-u (výraz + IF + Then)
+
+súbor 12 prešiel úspešne interpretom
+
+súbor 13: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Redefinice funkce
+
+súbor 13 prešiel úspešne interpretom
+
+súbor 14: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Redefinice funkce
+
+súbor 14 prešiel úspešne interpretom
+
+súbor 15: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If1
+
+súbor 15 prešiel úspešne interpretom
+
+súbor 16: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If1
+
+súbor 16 prešiel úspešne interpretom
+
+súbor 17: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# If1
+
+súbor 17 prešiel úspešne interpretom
+
+súbor 18: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# If3
+
+súbor 18 prešiel úspešne interpretom
+
+súbor 19: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# If4
+
+súbor 19 prešiel úspešne interpretom
+
+súbor 20: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# If5
+
+súbor 20 prešiel úspešne interpretom
+
+súbor 21: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If6
+
+súbor 21 prešiel úspešne interpretom
+
+súbor 22: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If7
+
+súbor 22 prešiel úspešne interpretom
+
+súbor 23: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# If8 - špatný výraz na konci
+
+súbor 23 prešiel úspešne interpretom
+
+súbor 24: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If8 - větvení jednoduché if
+
+súbor 24 prešiel úspešne interpretom
+
+súbor 25: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# If7
+
+súbor 25 prešiel úspešne interpretom
+
+súbor 26: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Nedefinovana promenna ve vyrazu
+
+súbor 26 prešiel úspešne interpretom
+
+súbor 27: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Definovana promenna ve vyrazu
+
+súbor 27 prešiel úspešne interpretom
+
+súbor 28: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Definovana promenna ve delsim vyrazu
+
+súbor 28 prešiel úspešne interpretom
+
+súbor 29: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Nedefinovana promenna ve delsim vyrazu
+
+súbor 29 prešiel úspešne interpretom
+
+súbor 30: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Delsi vyraz do promenne
+
+súbor 30 prešiel úspešne interpretom
+
+súbor 31: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Delsi chybny vyraz do promenne
+
+súbor 31 prešiel úspešne interpretom
+
+súbor 32: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Samostatny vyraz
+
+súbor 32 prešiel úspešne interpretom
+
+súbor 33: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Samostatny delsi vyraz
+
+súbor 33 prešiel úspešne interpretom
+
+súbor 34: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Samostatna vyraz s promennou
+
+súbor 34 prešiel úspešne interpretom
+
+súbor 35: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Samostatna vyraz s nedef promennou
+
+súbor 35 prešiel úspešne interpretom
+
+súbor 36: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Samostatna promenna
+
+súbor 36 prešiel úspešne interpretom
+
+súbor 37: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Samostatna nedef promenna
+
+súbor 37 prešiel úspešne interpretom
+
+súbor 38: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Viceradkove komentare
+
+súbor 38 prešiel úspešne interpretom
+
+súbor 39: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Print OK
+
+súbor 39 prešiel úspešne interpretom
+
+súbor 40: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Print ERR
+
+súbor 40 prešiel úspešne interpretom
+
+súbor 41: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Print volane funkce
+
+súbor 41 prešiel úspešne interpretom
+
+súbor 42: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Print volane funkce a dalsich argumentu
+
+súbor 42 prešiel úspešne interpretom
+
+súbor 43: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Print neexistujici promenne
+
+súbor 43 prešiel úspešne interpretom
+
+súbor 44: očakávaný výstu: 3, skutočný výstup: 3 --- Succes
+# Print neplatneho vyrazu(neexistujici promenna)
+
+súbor 44 prešiel úspešne interpretom
+
+súbor 45: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Print neplatneho vyrazu (konkatenace string a int)
+
+súbor 45 prešiel úspešne interpretom
+
+súbor 46: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Spravne volani funkce
+
+súbor 46 prešiel úspešne interpretom
+
+súbor 47: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Spravne volani funkce
+
+súbor 47 prešiel úspešne interpretom
+
+súbor 48: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Spatne volani funkce
+
+súbor 48 prešiel úspešne interpretom
+
+súbor 49: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Spatne volani funkce
+
+súbor 49 prešiel úspešne interpretom
+
+súbor 50: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Spatne volani funkce
+
+súbor 50 prešiel úspešne interpretom
+
+súbor 51: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Spatne volani funkce
+
+súbor 51 prešiel úspešne interpretom
+
+súbor 52: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Spatne volani funkce
+
+súbor 52 prešiel úspešne interpretom
+
+súbor 53: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Spatne volani funkce
+
+súbor 53 prešiel úspešne interpretom
+
+súbor 54: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Spatne volani funkce
+
+súbor 54 prešiel úspešne interpretom
+
+súbor 55: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Spatne volani funkce
+
+súbor 55 prešiel úspešne interpretom
+
+súbor 56: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Funkce 2, spravne volani
+
+súbor 56 prešiel úspešne interpretom
+
+súbor 57: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Funkce 2, spravne volani
+
+súbor 57 prešiel úspešne interpretom
+
+súbor 58: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Funkce 2, spatne volani
+
+súbor 58 prešiel úspešne interpretom
+
+súbor 59: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Funkce 2, spatne volani
+
+súbor 59 prešiel úspešne interpretom
+
+súbor 60: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Funkce 2, spatne volani
+
+súbor 60 prešiel úspešne interpretom
+
+súbor 61: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Funkce 2, spatne volani
+
+súbor 61 prešiel úspešne interpretom
+
+súbor 62: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Funkce 2, spatne volani
+
+súbor 62 prešiel úspešne interpretom
+
+súbor 63: očakávaný výstu: 5, skutočný výstup: 5 --- Succes
+# Funkce 2, spatne volani
+
+súbor 63 prešiel úspešne interpretom
+
+súbor 64: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Funkce 2, spatne volani
+
+súbor 64 prešiel úspešne interpretom
+
+súbor 65: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Funkce 2, spatne volani
+
+súbor 65 prešiel úspešne interpretom
+
+súbor 66: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# While
+
+súbor 66 prešiel úspešne interpretom
+
+súbor 67: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# 3 vnořené WHILE
+
+súbor 67 prešiel úspešne interpretom
+
+súbor 68: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# 3 vnořené WHILE, prázdný výraz
+
+súbor 68 prešiel úspešne interpretom
+
+súbor 69: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# Prázdný výraz IF
+
+súbor 69 prešiel úspešne interpretom
+
+súbor 70: očakávaný výstu: 2, skutočný výstup: 2 --- Succes
+# 3 vnořené WHILE, chybná syntaxe while
+
+súbor 70 prešiel úspešne interpretom
+
+súbor 72: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Program 2: Vypocet faktorialu (rekurzivne)
+
+súbor 72 prešiel úspešne interpretom
+
+súbor 73: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Program 1: Vypocet faktorialu (iterativne)
+
+súbor 73 prešiel úspešne interpretom
+
+súbor 74: očakávaný výstu: 0, skutočný výstup: 0 --- Succes
+# Program 3: Prace s retezci a vestavenymi funkcemi
+
+súbor 74 prešiel úspešne interpretom
+
+
+prešlo 73 parser testov a 73 interpret testov z 74 celkových testov
+
